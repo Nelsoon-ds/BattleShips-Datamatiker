@@ -2,18 +2,11 @@ import java.util.Scanner;
 
 public class GameHelper {
 
-public GameHelper(){
-    Scanner scanner = new Scanner();
 
-    public String getUserInput(String promt) {
+    public String getUserInput() {
 
-        String userInput = String.valueOf(scanner.nextInt());
-        System.out.println(promt + " ") {
-            return userInput;
-        }
-
-    }
-
+        Scanner scanner = new Scanner();
+        return String.valueOf(scanner.nextInt());
 }
 
 }
