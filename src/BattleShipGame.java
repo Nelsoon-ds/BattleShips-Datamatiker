@@ -1,9 +1,32 @@
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BattleShipGame {
 
+
+
     public static void main(String[] args) {
-        startSpil();
+        ArrayList<Ship> spilBoard = new ArrayList<>();
+        Ship galleon = new Ship(4, "Tortuga", "galleon");
+        Ship frigate = new Ship(5, "Devil", "frigate");
+        Ship warship = new Ship(10, "Blastoise", "warship");
+
+        galleon.genererPosition();
+        frigate.genererPosition();
+        warship.genererPosition();
+
+        spilBoard.add(galleon);
+        spilBoard.add(frigate);
+        spilBoard.add(warship);
+        System.out.println(spilBoard);
+
+
+     //   startSpil();
+    }
+
+    public static void createShips() {
+        // Flyt skibs logikken herover
     }
     public static void startSpil() {
         int skud = 6;
@@ -14,7 +37,7 @@ public class BattleShipGame {
         System.out.println("Held og lykke, Kaptajn! Havet venter på dine ordrer!");
         System.out.println("----------------------------------------------------");
         // Lav nogle objekter
-        Ship galleon = new Ship();
+        Ship galleon = new Ship(3, "Test", "galleon");
         GameHelper gameMaster = new GameHelper();
         // Placer skibet tilfældigt
         galleon.genererPosition();

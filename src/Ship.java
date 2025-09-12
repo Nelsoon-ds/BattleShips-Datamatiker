@@ -1,9 +1,25 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Ship {
     boolean sunket = false;
-    int[] hav = new int[15];
+    //int[] hav = new int[40];
+    ArrayList<Integer> hav = new ArrayList();
+    int størrelse;
+    String type;
+    String navn;
 
+
+    public Ship (int størrelse, String navn, String type) {
+        this.størrelse = størrelse;
+        this.navn = navn;
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return this.navn;
+    }
 
     /**
      *  Generere en random position inden for
@@ -13,7 +29,7 @@ public class Ship {
      * */
     public void genererPosition () {
         Random random = new Random();
-        int maxStartPosition = hav.length - 3; // Så er der altid plads til et skib i arrayet.
+        int maxStartPosition = hav.length - størrelse; // Så er der altid plads til et skib i arrayet.
         if (maxStartPosition < 0) {
             return;
         }
